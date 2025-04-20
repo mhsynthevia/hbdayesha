@@ -1,34 +1,98 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Pyari Behna!</title>
+    <title>Happy Birthday Ayesha</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(135deg, #FF9A8B, #FF6A88, #FF99AC);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            color: white;
             text-align: center;
-            background-color: #fce4ec;
-            color: #880e4f;
-            padding: 50px;
         }
+
         h1 {
-            font-size: 3em;
-            color: #d81b60;
+            font-size: 3.5rem;
+            animation: fadeIn 3s ease-in-out infinite alternate;
         }
+
         p {
-            font-size: 1.5em;
+            font-size: 1.8rem;
+            margin: 10px 0;
         }
-        .balloons {
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            opacity: 0.7;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .confetti:nth-child(odd) {
+            background: #FFD700;
+        }
+
+        .confetti:nth-child(even) {
+            background: #FF4500;
+        }
+
+        footer {
             margin-top: 20px;
+            font-size: 1rem;
+            color: #FFE4E1;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <h1>🎉 Happy Birthday, Pyari Behna! 🎂</h1>
-    <p>You are the best sister in the world! I hope this year brings you as much joy and happiness as you bring to everyone around you.</p>
-    <p>Enjoy your special day! 🎁💖</p>
-    <p>With love, <strong>Muhammad Hasnain</strong></p>
-    <div class="balloons">🎈🎈🎈</div>
+    <div>
+        <h1>🎉 Happy Birthday Ayesha! 🎉</h1>
+        <p>Wishing you a day filled with love, joy, and happiness.</p>
+        <p>With lots of love, <strong>Muhammad Hasnain</strong></p>
+    </div>
+
+    <!-- Confetti Animation -->
+    <script>
+        const body = document.querySelector('body');
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+            confetti.style.animationDelay = Math.random() * 5 + 's';
+            body.appendChild(confetti);
+        }
+    </script>
+
+    <footer>Have a magical birthday celebration! 🎂🎈</footer>
 </body>
 </html>
